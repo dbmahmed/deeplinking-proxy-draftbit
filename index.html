@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trustshare After purchase redirect test</title>
+  </head>
+  <body>
+    <h3>Testing the redirect...............</h3>
+    <script>
+      // expected url is like:
+      //https://example.com/complete?checkout_id={checkout_id}&project_id={project_id}
+      const queryString = window.location.href.split("?")[1];
+      const urlParams = new URLSearchParams(queryString);
+      const checkoutId = urlParams.get("checkout_id");
+      const projectId = urlParams.get("project_id");
+      console.log(
+        "redirecting to:",
+        `https://example.com/profile/${checkoutId}/${projectId}`
+      );
+      window.location.replace(
+        `https://example.com/profile/${checkoutId}/${projectId}`
+      );
+    </script>
+  </body>
+</html>
