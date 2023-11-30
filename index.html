@@ -26,15 +26,15 @@
       const pHtml = document.getElementById("query")
       const text = document.createTextNode(queryString)
       pHtml.appendChild(text)
-      // const urlParams = new URLSearchParams(queryString);
-      // const state = urlParams.get("state");
-      // const code = urlParams.get("code");
+      const urlParams = new URLSearchParams(queryString);
+      const state = urlParams.get("state");
+      const code = urlParams.get("code");
       console.log(
         "redirecting to:",
         `draftbit://LoginScreen/?${queryString}`
       );
       window.location.replace(
-        `draftbit://LoginScreen/?${queryString}`
+        `draftbit://LoginScreen/${code}/${state}`
       );
     </script>
   </body>
