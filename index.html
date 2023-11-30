@@ -27,14 +27,14 @@
       const text = document.createTextNode(queryString)
       pHtml.appendChild(text)
       const urlParams = new URLSearchParams(queryString);
-      const state = urlParams.get("state");
-      const code = urlParams.get("code");
+      // const state = urlParams.get("state");
+      // const code = urlParams.get("code");
       console.log(
         "redirecting to:",
         `draftbit://LoginScreen/?${queryString}`
       );
       window.location.replace(
-        `draftbit://LoginScreen/${code}/${state}`
+        `draftbit://LoginScreen/?${queryString}`
       );
     </script>
   </body>
