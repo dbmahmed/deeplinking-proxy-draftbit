@@ -4,28 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Draftbit - Redirects for deepliking</title>
+    <title>ERYD - Redirects for Veriff</title>
   </head>
   <body>
     <h3>Redirect...............</h3>
-    <p>Requested redirect path: <span  id="query"></span></p>
+    <p>Requested redirect scheme: <span  id="query"></span></p>
     <script>
       // expected url is like:
       //https://example.com/complete?checkout_id={checkout_id}&project_id={project_id}
-      const redirectPath = window.location.href.split("/").slice(-1)[0];
-      console.log( window.location.href.split("/"))
-      if (redirectPath){
+      const queryString = window.location.href.split("?")[1];
       const pHtml = document.getElementById("query")
-      const text = document.createTextNode(redirectPath)
-      pHtml.appendChild(text)
-      // const urlParams = new URLSearchParams(queryString);
-      // const state = urlParams.get("state");
-      // const code = urlParams.get("code");
-      window.location.replace(
-        redirectpath
-      );  
-      }
       
+      const urlParams = new URLSearchParams(queryString);
+      const scheme = urlParams.get("scheme");
+      // const code = urlParams.get("code");
+      const text = document.createTextNode(scheme)
+      pHtml.appendChild(text)
+      window.location.replace(
+        `${scheme}://CustomerOnboardingVeriffScreen/true`
+      );
     </script>
   </body>
 </html>
