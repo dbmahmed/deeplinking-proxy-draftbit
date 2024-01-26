@@ -1,4 +1,0 @@
-[[redirects]]
-  from = "/common/:scheme/:screen"
-  to = "/common"
-  query = {path = ":path"}
