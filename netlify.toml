@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/draftbit/*"
-  to = "draftbit://:splat"
+  to = "draftbit://"
 
 [[redirects]]
   from = "/common/*"
