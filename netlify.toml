@@ -1,7 +1,3 @@
 [[redirects]]
-  from = "/draftbit/*"
-  to = "draftbit://"
-
-[[redirects]]
-  from = "/common/*"
-  to = "/common"
+  from = "/common/:scheme/:screen"
+  to = ":scheme://:screen"
