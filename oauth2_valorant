@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trustshare After purchase redirect test</title>
+  </head>
+  <body>
+    <h3>Testing the redirect...............</h3>
+    <p id="query"></p>
+    <script>
+      // expected url is like:
+      //https://example.com/complete?checkout_id={checkout_id}&project_id={project_id}
+      const queryString = window.location.href.split("?")[1];
+      const pHtml = document.getElementById("query")
+      const text = document.createTextNode(queryString)
+      pHtml.appendChild(text)
+      const urlParams = new URLSearchParams(queryString);
+      const appRedirectUrl = `draftbit://LoginScreen/${queryString}`
+      console.log(
+        "redirecting to:",
+        appRedirectUrl
+      );
+      window.location.replace(
+        appRedirectUrl
+      );
+    </script>
+  </body>
+</html>
