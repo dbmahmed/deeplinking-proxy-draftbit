@@ -22,7 +22,8 @@
       // const code = urlParams.get("code");
       const text = document.createTextNode(path)
       const redirectPath = `${scheme}://${path}`
-      pHtml.appendChild(redirectPath)
+      console.log(redirectPath)
+      // pHtml.appendChild(redirectPath)
       window.location.replace(
         redirectPath
       );
