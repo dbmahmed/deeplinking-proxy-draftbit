@@ -22,7 +22,7 @@
       
       // const code = urlParams.get("code");
       const text = document.createTextNode(path)
-      const redirectPath = `${path}/${param}`
+      const redirectPath = param ? `${path}/${param}`: path
       console.log(redirectPath)
       pHtml.appendChild(redirectPath)
       window.location.replace(
