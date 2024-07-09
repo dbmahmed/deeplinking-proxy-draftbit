@@ -16,13 +16,13 @@
       const pHtml = document.getElementById("query")
       
       const urlParams = new URLSearchParams(queryString);
-      const scheme = urlParams.get("scheme");
-      const path = urlParams.get("deepLinkTo");
+      // const scheme = urlParams.get("scheme");
+      const path = urlParams.get("deepLinkTo");// path includes the scheme
       const param = urlParams.get("param");
       
       // const code = urlParams.get("code");
       const text = document.createTextNode(path)
-      const redirectPath = `${scheme}://${path}/${param}`
+      const redirectPath = `${path}/${param}`
       console.log(redirectPath)
       pHtml.appendChild(redirectPath)
       window.location.replace(
