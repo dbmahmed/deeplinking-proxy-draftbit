@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Draftbit Apps - Redirects without any query params</title>
+  </head>
+  <body>
+    <h3>Redirecting...............</h3>
+    <span id="query"></span>
+    <script>
+      // expected url is like:
+      //https://example.com/complete?checkout_id={checkout_id}&project_id={project_id}
+      const queryString = window.location.href.split("?")[1];
+      const pHtml = document.getElementById("query")
+
+      const urlParams = new URLSearchParams(queryString);
+      // const scheme = urlParams.get("scheme");
+      console.log('queryString')
+      const param = urlParams.get("param");
+
+      // const code = urlParams.get("code");
+
+      const redirectPath = `draftbit://ManageWalletScreen?${queryString}`
+      const text = document.createTextNode(redirectPath)
+      console.log(redirectPath)
+      pHtml.appendChild(text)
+      window.location.replace(
+        redirectPath
+      );
+
+      // window.location.replace(path)
+    </script>
+  </body>
+</html>
